@@ -2,8 +2,11 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+import os
+import joblib
+BASE_DIR =os.path.dirname(os.path.abspath(__file__))
 model = joblib.load("traffic_congestion_model.pkl")
-features = joblib.load("model_features.pkl")
+features = joblib.load(os.path.join(BASE_DIR,"model_features.pkl"))
 
 st.set_page_config(
     page_title="Traffic Congestion Prediction",
